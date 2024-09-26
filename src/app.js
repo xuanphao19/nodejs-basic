@@ -1,15 +1,35 @@
-// Import module http của Node.js
-// const http = require('http');
+// Import module:
+/*
+├── app.js
+├── bin
+│   └── www
+├── package.json
+├── public
+│   ├── images
+│   ├── javascripts
+│   └── css
+│       └── style.css
+├── routes
+│   ├── index.js
+│   └── users.js
+└── views
+    ├── error.hbs
+    ├── index.hbs
+    └── layout.hbs
+*/
+
 const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const exphbs = require("express-handlebars");
 
-const PORT = 3000;
+require("dotenv").config();
+const { PORT, HOST_NAME } = process.env;
+
 const app = express();
 // express => pt các ứng dụng web, RESTful API, và dịch vụ backend.
 
-app.use(express.static(path.join(__dirname, "assets")));
+app.use(express.static(path.join(__dirname, "public")));
 // Chí định địa chỉ tài nguyên tĩnh cho app.
 
 app.use(morgan("combined"));
@@ -23,10 +43,15 @@ app.set("view engine", ".hbs"); //1&2
 app.set("views", path.join(__dirname, "resources/views"));
 
 app.get("/", (req, res) => {
+  // Khai báo route
   res.render(`home`);
 });
+app.get("/new", (req, res) => {
+  // Khai báo route
+  res.render(`new`);
+});
 
-app.listen(PORT, (err, server) => {
+app.listen(PORT, HOST_NAME, (err, server) => {
   //⭐ app.listen(PORT); // Khởi động server và listen các yêu cầu.
   //⭐ app.listen(3000, '192.168.1.100', () => {});
   //⭐ Chỉ định địa chỉ IP hoặc tên miền mà server sẽ lắng nghe
@@ -45,7 +70,7 @@ app.listen(PORT, (err, server) => {
   // console.log(`Server is running on http://localhost:${PORT}`);
   // 3. 🌻 Callback Khởi động cron job:
   // startScheduledTasks(); // Khởi động các công việc định kỳ (cron jobs) khi server bắt đầu
-  // console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${process.env.PORT}`);
   // 4. 🌻 Callback Đăng ký các sự kiện khác:
 });
 
