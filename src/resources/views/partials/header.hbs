@@ -1,0 +1,52 @@
+<header id="header">
+  <div class="container header">
+    <div class="logo">
+      <span class="logo-icon">
+        <img src='./images/icons/logo.svg' alt='' />
+      </span>
+      <span class="logo-text"></span>
+    </div>
+
+    <div class="navigation">
+      <nav class="navbar">
+        <ul>
+          <li class="item">
+            <a href="#home" class="item-link">
+              Home
+            </a>
+          </li>
+          <li class="item">
+            <a href="#about" class="item-link">
+              About
+            </a>
+          </li>
+          <li class="item">
+            <a href="#service" class="item-link">
+              Service
+            </a>
+          </li>
+          <li class="item">
+            <a href="#contact" class="item-link">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="toggle-nav icon">
+        <svg class="toggle-icon" fill="none" viewBox="0 0 25 25" stroke-linecap="round" stroke-width="2.5" width="28"
+          height="28">
+          <path style="transition:stroke 0.8s" stroke="var(--open-stroke, #613dff)" d="M2 4H23M2 20H23 M2 12H16" />
+          <path style="transition:stroke 0.8s" stroke="var(--close-stroke, #fdbebe20)" d="M4 4L20 20M20 4L4 20" />
+          <style>
+            .toggle-icon:hover {
+              --close-stroke: red;
+              --open-stroke: #613dff00;
+              cursor: pointer
+            }
+          </style>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
