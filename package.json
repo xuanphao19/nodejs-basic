@@ -7,8 +7,14 @@
     "start": "nodemon --inspect src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xuanphao19/nodejs-basic.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Pháo Xuân 19",
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.0",
