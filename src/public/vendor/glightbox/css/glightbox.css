@@ -249,6 +249,7 @@
   overflow: auto;
   display: block !important;
   opacity: 1;
+  filter: hue-rotate();
 }
 
 .gslide-external {
